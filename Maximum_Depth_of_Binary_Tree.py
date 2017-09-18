@@ -32,3 +32,25 @@ class Solution:
         if root is None:
             return 0
         return max(self.maxDepth(root.left), self.maxDepth(root.right))+1
+'''
+Traverse
+class Solution:
+    """
+    @param root: The root of binary tree.
+    @return: An integer
+    """ 
+    def maxDepth(self, root):
+        # write your code here
+         self.depth = 0
+         self.helper(root,1)
+         return self.depth
+    
+    def helper(self, node, currentDepth):
+        if node is None:
+            return 0
+        if currentDepth > self.depth:
+            self.depth = currentDepth
+        self.helper(node.left, currentDepth+1)
+        self.helper(node.right, currentDepth+1)
+
+'''
